@@ -90,7 +90,7 @@ class Game(GObject.Object):
             self.custom_images.add("icon")
         if game_data.get("has_custom_coverart_big"):
             self.custom_images.add("coverart_big")
-        self.service = game_data.get("service")
+        self.service = game_data.get("service") or "none"
         self.appid = game_data.get("service_id")
         self.playtime = float(game_data.get("playtime") or 0.0)
         self.discord_id = game_data.get("discord_id")  # Discord App ID for RPC
